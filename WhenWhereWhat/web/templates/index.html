@@ -1,16 +1,19 @@
 {% extends 'base.html' %} 
 {% block content %}
-    {% for i in news %}
-        <br />
-        <div>{{i.author}}</div>
-        <div><b>{{i.title}} </b></div>
-        <div>{{i.description}}</div>
-        <!--
-            <div><a href="{{i.url}}">Link</a></div>
-        -->
-        <div><a href = "{{i.url}}" target ="_blank"><img src="{{i.urlToImage}}" class = "rounded" width = "500px" height = 400px /></a></div>
-        <div>Time Published: {{i.publishedAt}}</div> <!-- I'll change this later to the user time in a readable format-->
 
-    {% endfor %}
-
+<div class="row justify-content-center" style="width: 100%; padding: 0;margin: 0;">
+            {% for i in news %}
+            <div class="col-lg-4 border-dark" id="content" style="background-color: rgb(230, 225, 225);padding: 0;">
+                <a href = "{{i.url}}" target ="_blank" style="text-decoration: none;">
+                <div style="color: black;">
+                <div><img src="{{i.urlToImage}}" class = "rounded" height = 200px style="width: 100%;"/></div>
+                <div><b>{{i.title}} </b></div>
+                <div style="font-weight: lighter;">{{i.description}}</div>
+                <div><h1></h1>{{i.author}}</h1></div>
+                <div>Time Published: {{i.publishedAt}}</div> <!-- I'll change this later to the user time in a readable format-->
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
 {% endblock content %}

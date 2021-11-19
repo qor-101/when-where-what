@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 #img{
-    background-color: black;
-    height: 15%;
-    color: white;
-    padding-top: 2%;
-}
-#text1{
-    font-size: 30px;
+font-size: 40px;
     font-family: Courgette;
     font-weight: bolder;
+    background-color: black;
+    height: 50%;
+    color: white;
+    margin: 0;
 }
 #btn1{
     background-color: rgba(0, 0,0, 0);
@@ -61,8 +59,8 @@
     border-radius:10px;
     box-shadow: 0px 5px 15px 10px #545454;
 }
-#form1 input{
-    height: 1.975rem;
+.input1{
+ height: 1.975rem;
     border: none;
     border-bottom-style: solid;
     border-bottom-color: black;
@@ -93,4 +91,10 @@
     color: white;
     margin-left: 5%;
     margin-top: 5%;
+}
+#content{
+    transition: 1s;
+}
+#content:hover{
+    transform: scale(1.1);
 }
