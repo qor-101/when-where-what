@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% block content %}
+    {% for i in news %}
+        <br />
+        <div>{{i.author}}</div>
+        <div><b>{{i.title}} </b></div>
+        <div>{{i.description}}</div>
+        <!--
+            <div><a href="{{i.url}}">Link</a></div>
+        -->
+        <div><a href = "{{i.url}}" target ="_blank"><img src="{{i.urlToImage}}" class = "rounded" width = "500px" height = 400px /></a></div>
+        <div>Time Published: {{i.publishedAt}}</div> <!-- I'll change this later to the user time in a readable format-->
+
+    {% endfor %}
+
+{% endblock content %}

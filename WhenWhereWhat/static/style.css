@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+#img{
+    background-color: black;
+    height: 15%;
+    color: white;
+    padding-top: 2%;
+}
+#text1{
+    font-size: 30px;
+    font-family: Courgette;
+    font-weight: bolder;
+}
+#btn1{
+    background-color: rgba(0, 0,0, 0);
+    color: white;
+    border:none;
+}
+#btn2{
+    background-color: rgba(0, 0,0, 0);
+    color: white;
+    border:none;
+}
+#button2{
+    font-family: Ubuntu;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    width: 20%;
+    height: 10%;
+    color: white;
+}
+#button3{
+    font-family: Ubuntu;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    width: 20%;
+    height: 10%;
+    color: white;
+    margin-left: 5%;
+}
+.div1{
+    display: none;
+    position: absolute;
+    top: 20%;
+    left: 34.5%;
+    background-color:white;
+    height: 60%;
+    width: 30%;
+    border-radius:10px;
+    box-shadow: 0px 5px 15px 10px #545454;
+    }
+#form1{
+    display: none;
+    position: absolute;
+    top: 20%;
+    left: 34.5%;
+    background-color:white;
+    height: 60%;
+    width: 30%;
+    border-radius:10px;
+    box-shadow: 0px 5px 15px 10px #545454;
+}
+#form1 input{
+    height: 1.975rem;
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    background-color: transparent;
+    margin-bottom:2%;
+    margin-left:13%;
+    outline: none;
+    width: 15.625rem;
+}
+#button4{
+    font-family: Ubuntu;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    height: 2rem;
+    width: 5rem;
+    color: white;
+    margin-left: 25%;
+    margin-top:5% ;
+}
+#button5{
+    font-family: Ubuntu;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    height: 2rem;
+    width: 5rem;
+    color: white;
+    margin-left: 5%;
+    margin-top: 5%;
+}

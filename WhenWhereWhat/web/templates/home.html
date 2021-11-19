@@ -1,0 +1,115 @@
+{% extends 'base.html' %} 
+{% block value %}
+ 
+        <script>
+            function openlogin() {
+                document.getElementById('form').style.display='block';
+                document.getElementById('form1').style.display='none';
+                document.getElementById('main').style.filter='blur(10px)';
+                document.getElementById('main').style.filter='blur(10px)';
+                document.getElementById('fname').value="";
+                document.getElementById('lname').value="";
+                document.getElementById('email').value="";
+                document.getElementById('usn').value="";
+                document.getElementById('pwd').value=""; 
+            }
+            function closeform() {
+            document.getElementById('form').style.display='none';
+            document.getElementById('main').style.filter='blur(0px)';
+            document.getElementById('UN').value="";
+            document.getElementById('PW').value="";
+            }
+            function opensignup() {
+                document.getElementById('form').style.display='none';
+                document.getElementById('main').style.filter='blur(10px)';
+                document.getElementById('UN').value="";
+                document.getElementById('PW').value="";
+                document.getElementById('form1').style.display='block';
+            }
+            function closesignup() {
+            document.getElementById('form1').style.display='none';
+            document.getElementById('main').style.filter='blur(0px)';
+            document.getElementById('fname').value="";
+            document.getElementById('lname').value="";
+            document.getElementById('email').value="";
+            document.getElementById('usn').value="";
+            document.getElementById('pwd').value="";    
+        }
+        </script>
+        <div id="main">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand fw-bolder" href="#"><i class="fa fa-newspaper-o" style="font-size:24px"></i>  WhenWhereWhat</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                  <a class="nav-link active" href="#">Business</a>
+                  <a class="nav-link active" href="#">Sports</a>
+                  <a class="nav-link active" href="#">Technology</a>
+                  <a class="nav-link active" href="#">Health</a>
+                  <a class="nav-link active" href="#">Science</a>
+                  <button id="btn1" onclick="opensignup()">Signup</button>
+                  <button id="btn2" onclick="openlogin()">Login</button>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <div class="container-fluid" id="img">
+            <center><p id="text1">Your Daily Dose of News</p></center>
+          </div>
+
+          <div>
+            {% block content %}
+            {% endblock %}
+          </div>
+
+        </div>
+          <div class="div1 container-fluid" id="form">
+            <form action="/login" method="POST" >
+                <label style="color:black;display: block; text-align: center; font-family: Ubuntu; font-weight: bold; font-size: 2.25rem; margin-top:2%;">Welcome back!! </label>
+                
+                <div style="font-size: 1.25rem; text-align: center;margin-top: 10%;" >
+                    <i class="fa fa-user icon w3-xlarge"></i>&emsp14;
+                    <input type="text" placeholder="Username" name="UN" id="UN" required>
+                </div>    
+                
+                <div style="font-size: 1.25rem; text-align: center;margin-top: 5%;">
+                    <i class="fa fa-key icon"></i>
+                    <input type="password" placeholder="Password" name="PW" id="PW" required>
+                </div>
+                <div style="text-align:center; margin-top: 10%;">
+                <button name="button2" id="button2">Login</button>
+                <button name="button3" id="button3" onclick="closeform()">Close</button>
+                </div>
+            </form> 
+        </div>
+        <div id="form1">
+            <form name="myForms" method="POST" action="/signup" onsubmit="return validate()">
+                <label style="color: black;display: block; text-align: center; margin-top: 1%; font-family: Ubuntu; font-weight: bold; font-size: 200%;">Welcome!! </label>
+                
+                <p style="font-family:Ubuntu; font-size: 1rem; text-align: center;">Make a personal account to get personalized news</p>
+                
+                <input type="text" placeholder="First Name" name="fname" id="fname" required>
+                
+                
+                <input type="text" name="lname"placeholder="Last Name" id="lname" required>
+                
+                
+                <input type="email" name="mail"placeholder="E-mail" id="mail" required>
+                
+                
+                <input type="text" name="usn" placeholder="Username" id="usn" required>
+                
+                
+                <input type="password" name="pwd"placeholder="Password" id="pwd" required>
+                
+                <button  name="button4"  id="button4" >SignUp</button>
+
+                <button  name="button5"  id="button5" onclick="closesignup()">Close</button>
+                
+            </form>
+        </div>
+        {% endblock value %}

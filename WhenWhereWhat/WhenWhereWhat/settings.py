@@ -123,11 +123,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR , 'static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR , 'static_cdn')
+
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
-
-STATIC_ROOT = os.path.join(BASE_DIR,'assets')
+INDIAN_NEWS_API_KEY = "fd72cb71a9msh1fa6a2791e31886p1c79aejsne23a14ea8bd6"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
