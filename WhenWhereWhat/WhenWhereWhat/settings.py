@@ -38,11 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-
-    #Apps
-    'web',
-
+	'web.apps.WebConfig',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+				'django.template.context_processors.media',
             ],
         },
     },
@@ -119,6 +116,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -130,7 +130,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR , 'static_cdn')
 
 STATIC_URL = '/static/'
-
 
 INDIAN_NEWS_API_KEY = "fd72cb71a9msh1fa6a2791e31886p1c79aejsne23a14ea8bd6"
 
