@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 #img{
-font-size: 40px;
+    font-size: 40px;
     font-family: Courgette;
     font-weight: bolder;
     background-color: black;
-    height: 50%;
+    height: 5rem;
     color: white;
     margin: 0;
 }
@@ -23,8 +23,8 @@ font-size: 40px;
     border-radius: 10px;
     border: none;
     background-color: black;
-    width: 20%;
-    height: 10%;
+    width: 5rem;
+    height: 2rem;
     color: white;
 }
 #button3{
@@ -32,8 +32,8 @@ font-size: 40px;
     border-radius: 10px;
     border: none;
     background-color: black;
-    width: 20%;
-    height: 10%;
+    width: 5rem;
+    height: 2rem;
     color: white;
     margin-left: 5%;
 }
@@ -65,7 +65,7 @@ font-size: 40px;
     border-bottom-style: solid;
     border-bottom-color: black;
     background-color: transparent;
-    margin-bottom:2%;
+    margin-bottom:1%;
     margin-left:13%;
     outline: none;
     width: 15.625rem;
@@ -79,7 +79,7 @@ font-size: 40px;
     width: 5rem;
     color: white;
     margin-left: 25%;
-    margin-top:5% ;
+    margin-top:4% ;
 }
 #button5{
     font-family: Ubuntu;
@@ -90,7 +90,7 @@ font-size: 40px;
     width: 5rem;
     color: white;
     margin-left: 5%;
-    margin-top: 5%;
+    margin-top: 4%;
 }
 #content{
     transition: 1s;
