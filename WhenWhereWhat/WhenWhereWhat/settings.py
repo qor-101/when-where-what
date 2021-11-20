@@ -131,9 +131,12 @@ STATIC_ROOT = os.path.join(BASE_DIR , 'static_cdn')
 
 STATIC_URL = '/static/'
 
-INDIAN_NEWS_API_KEY = "fd72cb71a9msh1fa6a2791e31886p1c79aejsne23a14ea8bd6"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+API_KEY_VARUN = "e6a2a3f2f2ad4258adca6d6e017584d2"
+
+API_KEY_SUNDAR = "6e339c705da24e9b8c33f1b64c922405"

@@ -68,11 +68,11 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
-                      <a class="nav-link active" href="#">Business</a>
-                      <a class="nav-link active" href="#">Sports</a>
-                      <a class="nav-link active" href="#">Technology</a>
-                      <a class="nav-link active" href="#">Health</a>
-                      <a class="nav-link active" href="#">Science</a>
+                      <a class="nav-link active" href="{% url 'index'%}?category=business">Business</a>
+                      <a class="nav-link active" href="{% url 'index'%}?category=sports">Sports</a>
+                      <a class="nav-link active" href="{% url 'index'%}?category=technology">Technology</a>
+                      <a class="nav-link active" href="{% url 'index'%}?category=health">Health</a>
+                      <a class="nav-link active" href="{% url 'index'%}?category=science">Science</a>
                       <button id="btn1" onclick="opensignup()">Signup</button>
                       <button id="btn2" onclick="openlogin()">Login</button>
                     </div>

@@ -8,30 +8,51 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from datetime import date
 import sqlite3
+from django.shortcuts import render
 import requests
+from .services import get_all_indian_news
+from django.http import HttpResponse, response
+from django.conf import settings
+from urllib.parse import urlparse
+
+
 # Create your views here.
 
 
-# def get_all_indian_news(request):
 
-#     url = "https://indian-news-live.p.rapidapi.com/news"
 
-#     headers = {
-#     'x-rapidapi-host': "indian-news-live.p.rapidapi.com",
-#     'x-rapidapi-key': "fd72cb71a9msh1fa6a2791e31886p1c79aejsne23a14ea8bd6"
-#     }
 
-#     response = requests.get(url, headers= headers)
 
-#     return HttpResponse(response)
+#API_KEY = "e6a2a3f2f2ad4258adca6d6e017584d2"
 
-def top_indian_news(request):
-    API_KEY = "e6a2a3f2f2ad4258adca6d6e017584d2"
-    COUNTRY = 'in'
-    CATEGORY = 'sports'
-    #USING NEWS API (https://newsapi.org/)
+def top_news(request):
+    category = ""
+    country = "in"
 
-    url = f"https://newsapi.org/v2/top-headlines?category={CATEGORY}&country={COUNTRY}&apiKey={API_KEY}"
+    if(request.GET.get('category')):
+        category = request.GET.get('category')
+
+    if(request.GET.get('country')):    
+        country = request.GET.get('country')
+
+    
+    if(category == "" and country == ""):
+        print("Error here 1")
+        url = f"https://newsapi.org/v2/top-headlines?category=general&country=in&apiKey={settings.API_KEY_SUNDAR}"
+
+    
+    elif(country == ""):
+        url = f"https://newsapi.org/v2/top-headlines?category={category}&apiKey={settings.API_KEY_SUNDAR}"
+        print("ERROR 2")
+
+
+    elif(category == ""):    
+        url = f"https://newsapi.org/v2/top-headlines?country={country}&apiKey={settings.API_KEY_SUNDAR}"
+
+
+    else:
+        url = f"https://newsapi.org/v2/top-headlines?category={category}&country={country}&apiKey={settings.API_KEY_SUNDAR}"
+
 
     response = requests.get(url)
     data = response.json()
@@ -39,9 +60,25 @@ def top_indian_news(request):
     #print(data)
 
     context = {
-        'news' : articles
+        'news' : articles,
+
     }
 
+    return render(request , 'index.html' , context)
+
+
+
+def search_news(request):
+    SEARCH_WORDS = "the+rock"
+    url = f"https://newsapi.org/v2/everything?q={SEARCH_WORDS}&apiKey={settings.API_KEY}"
+
+    response = requests.get(url)
+    data = response.json()
+    articles = data['articles']
+
+    context = {
+        'news' : articles
+    }
     return render(request , 'index.html' , context)
 
 @csrf_exempt
