@@ -3,10 +3,10 @@
 
 <div class="row justify-content-center" style="width: 100%; padding: 0;margin: 0;">
             {% for i in news %}
-            <div class="col-lg-4 border-dark" id="content" style="background-color: rgb(230, 225, 225);padding: 0;">
+            <div class="col-lg-4 border-1" id="content" style="background-color: rgb(230, 225, 225);padding: 0;">
                 <a href = "{{i.url}}" target ="_blank" style="text-decoration: none;">
                 <div style="color: black;">
-                <div><img src="{{i.urlToImage}}" class = "rounded" height = 200px style="width: 100%;"/></div>
+                <div><img src="{{i.urlToImage}}" height = 200px style="width: 100%;"/></div>
                 <div><b>{{i.title}} </b></div>
                 <div style="font-weight: lighter;">{{i.description}}</div>
                 <div><h1></h1>{{i.author}}</h1></div>
