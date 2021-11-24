@@ -4,9 +4,9 @@
     font-family: Courgette;
     font-weight: bolder;
     background-color: black;
-    height: 5rem;
     color: white;
     margin: 0;
+    padding: 0;
 }
 #btn1{
     background-color: rgba(0, 0,0, 0);
@@ -97,4 +97,8 @@
 }
 #content:hover{
     transform: scale(1.1);
+}
+
+#a1:hover{
+    color: blue;
 }

@@ -1,9 +1,10 @@
 {% extends 'base.html' %} 
 {% block content %}
 
-<div class="row justify-content-center" style="width: 100%; padding: 0;margin: 0;">
+<div class="row justify-content-center" style="width: 100%; padding: 50px;margin: 0">
+            <div class="lead" style="margin: 0;padding: 0;font-weight: bolder;">Editor's Pick</div><br><br><br>
             {% for i in news %}
-            <div class="col-lg-4 border-1" id="content" style="background-color: rgb(230, 225, 225);padding: 0;">
+            <div class="col-lg-4 border-1" id="content" style="background-color: white;padding: 20px;">
                 <a href = "{{i.url}}" target ="_blank" style="text-decoration: none;">
                 <div style="color: black;">
                 <div><img src="{{i.urlToImage}}" height = 200px style="width: 100%;"/></div>
