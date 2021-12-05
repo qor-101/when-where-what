@@ -55,8 +55,8 @@ def top_news(request):
     #print(data)
 
     context = {
-        'news' : articles,
-
+        'zero' : articles[0],
+        'news' : articles[1:],
     }
 
     return render(request , 'index.html' , context)

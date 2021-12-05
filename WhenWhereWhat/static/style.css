@@ -1,13 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
-#img{
-    font-size: 40px;
-    font-family: Courgette;
-    font-weight: bolder;
-    background-color: black;
-    color: white;
-    margin: 0;
-    padding: 0;
-}
+#main{
+    background-image:url('news.jpg');
+    background-size: cover;
+} 
 #btn1{
     background-color: rgba(0, 0,0, 0);
     color: white;
@@ -102,3 +97,21 @@
 #a1:hover{
     color: blue;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 

@@ -60,22 +60,22 @@
 </script>
 
 <body>
-        <div id="main" style="background-color: rgb(230, 225, 225);">
-          <nav class="navbar navbar-expand-lg" style="margin: 0;">
+        <div id="main" >
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin: 0;">
             <div class="container-fluid" style="padding: 0;">
-              <a class="navbar-brand fw-bolder" href="{% url 'index'%}?category=general" style="color: rgb(56, 55, 55);">&emsp;&emsp;&emsp;<i class="fa fa-newspaper-o" style="font-size:24px;"></i>  WhenWhereWhat</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+              <a class="navbar-brand fw-bolder" href="{% url 'index'%}?category=general" >&emsp;&emsp;&emsp;<i class="fa fa-newspaper-o" style="font-size:24px;"></i>  WhenWhereWhat</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation" style="color: black;">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarToggle">
                 <div class="navbar-nav ms-auto">
-                  <a class="nav-link active" href="{% url 'index'%}?category=business" style="color: rgb(56, 55, 55);">Business</a>
-                  <a class="nav-link active" href="{% url 'index'%}?category=sports" style="color: rgb(56, 55, 55);">Sports</a>
-                  <a class="nav-link active" href="{% url 'index'%}?category=technology" style="color: rgb(56, 55, 55);">Technology</a>
-                  <a class="nav-link active" href="{% url 'index'%}?category=health" style="color: rgb(56, 55, 55);">Health</a>
-                  <a class="nav-link active" href="{% url 'index'%}?category=science" style="color: rgb(56, 55, 55);">Science</a>
+                  <a class="nav-link active" href="{% url 'index'%}?category=business" >Business</a>
+                  <a class="nav-link active" href="{% url 'index'%}?category=sports">Sports</a>
+                  <a class="nav-link active" href="{% url 'index'%}?category=technology" >Technology</a>
+                  <a class="nav-link active" href="{% url 'index'%}?category=health" >Health</a>
+                  <a class="nav-link active" href="{% url 'index'%}?category=science" >Science</a>
                   <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="color: rgb(56, 55, 55);outline: none;">Profile
+                    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="color:white;outline: none;">Profile
                     <span class="caret"></span></button>
                     <ul class="dropdown-menu" style="background-color: black;">
                       <li><a href="#"><button id="btn1" onclick="opensignup()">Signup</button></a></li>
@@ -89,13 +89,7 @@
                 </div>
               </div>
             </div>
-          </nav>
-          <div id="img">
-            <div style="padding-top: 1%;">
-              <center>Your Daily Dose of News</center>
-            </div>  
-          </div>
-
+          </nav>    
           <div>
             {% block content %}
             {% endblock %}
@@ -104,7 +98,9 @@
 
         <div class="div1 container-fluid" id="form">
             <form action="/login" method="POST" >
-                <label style="color:black;display: block; text-align: center; font-family: Ubuntu; font-weight: bold; font-size: 2.25rem; margin-top:2%;">Welcome back!! </label>
+                <label style="color:black;display: block; text-align: center; font-family: Ubuntu; font-weight: bolder; font-size: 2.25rem; margin-top:2%;">Welcome back!! </label>
+
+                <div class="display" style="text-align: center;"><b>Login and Enjoy Personalized Newspaper Experiance</b></div>
                 
                 <div style="font-size: 1.25rem; text-align: center;margin-top: 10%;" >
                     <i class="fa fa-user icon w3-xlarge"></i>&emsp14;
