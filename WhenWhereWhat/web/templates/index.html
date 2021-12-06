@@ -25,18 +25,18 @@
 </style>
 
 <div class="row justify-content-center" style="width: 100%; padding: 50px;margin: 0;">
-    <div class="bgimg" style="width: 100%;">
+    <div class="bgimg" style="width: 100%;height: 350px;">
         <a href = "{{zero.url}}" target ="_blank" style="text-decoration: none;">
         <div style="filter: brightness(100%); color: white;margin: 0;margin-top: 7%;padding-left: 30px;padding-right: 30px;">
-        <div style="border-left: 5px solid red;padding-left: 7px;"><b>{{zero.title}} </b></div>
-        <div style="font-weight: lighter;font-size: 60%;">{{zero.description}}</div>
+        <div style="border-left: 5px solid red;padding-left: 7px; font-size: 120%;"><b>{{zero.title}} </b></div>
+        <div style="font-weight: lighter;font-size: 60%; font-size: 60%;">{{zero.description}}</div>
         </div>
         </a>
     </div>
             <br><br><div class="lead display-6" style="padding:0;padding-top:3%;padding-bottom:3%;font-weight: bolder;color: black">Your Picks</div>
 
             {% for i in news %}
-            <div class="col-lg-4 border-1" id="content" style="background-color: rgba(0, 0, 0, 0.95);padding: 20px;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;border: 5px solid white;">
+            <div class="col-lg-4 border-1" id="content" style="background-color: rgba(0, 0, 0, 0.98);padding: 20px;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;border: 5px solid white;">
                 <a href = "{{i.url}}" target ="_blank" style="text-decoration: none;">
                 <div style="color: white;">
                 <div><img src="{{i.urlToImage}}" height = 200px style="width: 100%;"/></div>
