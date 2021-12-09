@@ -46,6 +46,9 @@ def top_news(request):
     else:
         url = f"https://newsapi.org/v2/top-headlines?category={category}&country={country}&apiKey={settings.API_KEY_SUNDAR}"
 
+    
+    # if(request.GET.get('search-btn')):
+    #     search_news(request)
 
     response = requests.get(url)
     data = response.json()

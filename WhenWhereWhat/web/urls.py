@@ -7,7 +7,7 @@ urlpatterns = [
     #path('', getIndianNews.as_view(template_name='index.html')),
     #path("" , get_all_indian_news),
     path("" , top_news , name = "index"),
-    path("search/" , search_news),
+    path("search/" , search_news , name = "search"),
     path('login',login_user),
     path('signup',signup_user),
 ]

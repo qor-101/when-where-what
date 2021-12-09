@@ -82,7 +82,7 @@
                       <li><a href="#"><button id="btn2" onclick="openlogin()">Login</button></a></li>
                     </ul>
                   </div>  
-                  <form class="d-flex">
+                  <form class="d-flex" action="{% url 'search'%}?search-btn=search-btn">
                     <input class="form-control me-2" name = "search-btn" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                   </form>                
