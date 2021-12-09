@@ -1,4 +1,3 @@
-from .services import get_all_indian_news
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, request
@@ -10,7 +9,6 @@ from datetime import date
 import sqlite3
 from django.shortcuts import render
 import requests
-from .services import get_all_indian_news
 from django.http import HttpResponse, response
 from django.conf import settings
 from urllib.parse import urlparse
@@ -64,15 +62,18 @@ def top_news(request):
 
 
 def search_news(request):
-    SEARCH_WORDS = "the+rock"
-    url = f"https://newsapi.org/v2/everything?q={SEARCH_WORDS}&apiKey={settings.API_KEY}"
+    if request.method == 'GET':
+        SEARCH_WORDS = request.GET.get('search-btn')
+    print(SEARCH_WORDS)
+    url = f"https://newsapi.org/v2/everything?q={SEARCH_WORDS}&apiKey={settings.API_KEY_VARUN}"
 
     response = requests.get(url)
     data = response.json()
     articles = data['articles']
 
     context = {
-        'news' : articles
+        'zero' : articles[0],
+        'news' : articles[1:],
     }
     return render(request , 'index.html' , context)
 
