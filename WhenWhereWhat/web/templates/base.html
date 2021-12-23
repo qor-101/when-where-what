@@ -91,13 +91,20 @@
             </div>
           </nav>    
           <div>
+            {%if messages %}
+            {% for message in messages %}
+              <div class = "alert alert-{{message.tags}}">
+                {{message}}
+              </div>
+            {% endfor%}
+          {% endif %}
             {% block content %}
             {% endblock %}
           </div>
         </div>
 
         <div class="div1 container-fluid" id="form">
-            <form action="/login" method="POST" >
+            <form method="POST" action="/login/"> {% csrf_token %}
                 <label style="color:black;display: block; text-align: center; font-family: Ubuntu; font-weight: bolder; font-size: 2.25rem; margin-top:2%;">Welcome back!! </label>
 
                 <div class="display" style="text-align: center;"><b>Login and Enjoy Personalized Newspaper Experience</b></div>
@@ -118,7 +125,7 @@
             </form> 
         </div>
         <div id="form1">
-            <form name="myForms" method="POST" action="/signup" onsubmit="return validate()">
+            <form name="myForms" method="POST" onsubmit="return validate()"> {% csrf_token %}
                 <label style="color: black;display: block; text-align: center; margin-top: 1%; font-family: Ubuntu; font-weight: bold; font-size: 200%;">Welcome!! </label>
                 
                 <p style="font-family:Ubuntu; font-size: 1rem; text-align: center;">Make a personal account to get personalized news</p>
@@ -136,23 +143,38 @@
                 <br>
                 <div class="display-8" style="margin-left: 13%;">Select your preferences:</div>
                 <div style="text-align: center;"">
-                  <label class="checkbox-inline text-sm-center">
-                    <input type="checkbox" value="business" name="cat1" id="cat1">Business
+                  <label class="checkbox-inline text-sm-center" name = 'preference'>
+                    <input type="checkbox" value="business" name="preference" id="cat1">Business
                   </label>
                   <label class="checkbox-inline text-sm-center">
-                    <input type="checkbox" value="sports" name="cat2" id="cat2">Sports
+                    <input type="checkbox" value="sports" name="preference" id="cat2">Sports
                   </label>
                   <label class="checkbox-inline text-sm-center">
-                    <input type="checkbox" value="technology" name="cat3" id="cat3">Technology
+                    <input type="checkbox" value="technology" name="preference" id="cat3">Technology
                   </label>
                   <label class="checkbox-inline text-sm-center">
-                    <input type="checkbox" value="science" name="cat4" id="cat4">Science
+                    <input type="checkbox" value="science" name="preference" id="cat4">Science
                   </label>
                   <label class="checkbox-inline text-sm-center">
-                    <input type="checkbox" value="health" name="cat5" id="cat5">Health
+                    <input type="checkbox" value="health" name="preference" id="cat5">Health
                   </label>
+                  
                 </div>
+                <label class="display-8" style="margin-left: 13%;" for="country">Select your country:</label>
+                <!-- <div style="text-align: center;" class = 'mx-4'> -->
 
+                  <!-- <label class="display-8" style="margin-left: 13%;" for="preference">Choose your preference:</label> -->
+
+                  <select name="country">
+                  <option value="in" default>India</option>
+                  <option value="us">USA</option>
+                  <option value="fr">France</option>
+                  <option value="gb">Great Britain</option>
+                  <option value="au">Australia</option>
+                  <option value="jp">Japan</option>
+
+                </select>
+                <!-- </div> -->
                 <button  name="button4"  id="button4" >SignUp</button>
 
                 <button  name="button5"  id="button5" onclick="closesignup()">Close</button>

@@ -8,6 +8,8 @@ urlpatterns = [
     #path("" , get_all_indian_news),
     path("" , top_news , name = "index"),
     path("search/" , search_news , name = "search"),
-    path('login',login_user),
-    path('signup',signup_user),
+    path('login/' , login , name = 'login'),
+    path('loggedin/' , logged_in_news , name = "logged_in" )
+    # path('login',login_user),
+    # path('signup',signup_user),
 ]

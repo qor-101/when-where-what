@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'web.apps.WebConfig',
+
+    #Installed Apps
+    'web',
+
 ]
 
 MIDDLEWARE = [
@@ -140,3 +143,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 API_KEY_VARUN = "e6a2a3f2f2ad4258adca6d6e017584d2"
 
 API_KEY_SUNDAR = "6e339c705da24e9b8c33f1b64c922405"
+
+# AUTH_USER_MODEL = 'web.User'
