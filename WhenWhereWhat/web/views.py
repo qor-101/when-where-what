@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from datetime import date
 from django.contrib.auth.hashers import make_password
+import secrets
 
 import sqlite3
 import requests
@@ -35,18 +36,38 @@ from django.contrib.auth.decorators import login_required
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('UN')
+
         password = request.POST.get('PW')
         user = authenticate(username=username, password=password)
         if user is not None:
             auth_login(request, user)
             messages.success(request , "Successfully logged into {0}".format(request.POST.get('UN')))
-            return redirect('index')
+        return redirect('logged_in')
+
 
 @login_required
 def logged_in_news(request):
-    category = random.choice(request.user.profile.preference)
-    print("Category is " + category)
+    category = random.choice(request.user.profile.preference.split(","))
+    #category = 'sports'
+    print("Category is " , category)
+    country = request.user.profile.country
+    print(country)
     
+    url = f"https://newsapi.org/v2/top-headlines?category={category}&country={country}&apiKey={settings.API_KEY_VARUN}"
+    
+
+    response = requests.get(url)
+    data = response.json()
+    articles = data['articles']
+    #print(data)
+
+    context = {
+        'zero' : articles[0],
+        'news' : articles[1:],
+        # 'form' : form,
+    }
+
+    return render(request , 'index.html' , context)
 
 
         
