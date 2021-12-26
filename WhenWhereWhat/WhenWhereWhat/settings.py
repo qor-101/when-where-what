@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     #Installed Apps
     'web',
+    'rss',
 
 ]
 
