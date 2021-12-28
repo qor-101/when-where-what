@@ -13,22 +13,18 @@ import feedparser as fp
 
 # Create your views here.
 
-def returns_a_list_of_news_articles_given_a_rss_link(rss_link_str):
+def toi(request):
     
-    dx = fp.parse(rss_link_str)
-    list_of_articles = []
-    n = min(len(dx.entries),30)
+    articles = []
+    dx = fp.parse('https://timesofindia.indiatimes.com/rssfeedstopstories.cms')
+    n = min(len(dx.entries),33)
     for i in range(n):
         a={
             'title':dx.entries[i].title,
             'url':dx.entries[i].link,
             'published':dx.entries[i].published,
         }
-        list_of_articles.append(a)
-    return list_of_articles
-
-def toi(request):
-    articles = returns_a_list_of_news_articles_given_a_rss_link('https://timesofindia.indiatimes.com/rssfeedstopstories.cms')
+        articles.append(a)
     context = {
         'zero' : articles[0],
         'news' : articles[1:],
@@ -36,17 +32,47 @@ def toi(request):
     return render(request , 'index2.html' , context)
 
 def indiatoday(request):
-    articles = returns_a_list_of_news_articles_given_a_rss_link('https://www.indiatoday.in/rss/1206584')
+    
+    dx = fp.parse('https://www.indiatoday.in/rss/1206584')
+    articles = []
+    n = min(len(dx.entries),33)
+    for i in range(n):
+        m = dx.entries[i].summary.find("src")
+        x = dx.entries[i].summary[m:].split(" ")
+        l = x[0].split('"')
+        a={
+            'title':dx.entries[i].title,
+            'url':dx.entries[i].link,
+            'published':dx.entries[i].published,
+            'imgurl':l[1],
+        }
+        articles.append(a)
+    
     context = {
         'zero' : articles[0],
         'news' : articles[1:],
     }
-    return render(request , 'index2.html' , context)
+    
+    return render(request , 'indiatoday.html' , context)
 
-def etimes(request):
-    articles = returns_a_list_of_news_articles_given_a_rss_link('https://economictimes.indiatimes.com/rssfeedstopstories.cms')
+def news18(request):
+    
+    dx = fp.parse('https://www.news18.com/rss/india.xml')
+    articles = []
+    n = min(len(dx.entries),33)
+    for i in range(n):
+        a={
+            'title':dx.entries[i].title,
+            'url':dx.entries[i].link,
+            'publishedAt':dx.entries[i].published,
+            'urlToImage':dx.entries[i].media_content[0]['url'],
+            'description':dx.entries[i].description[:100],
+        }
+        articles.append(a)
+    
     context = {
         'zero' : articles[0],
         'news' : articles[1:],
     }
-    return render(request , 'index2.html' , context)
+    
+    return render(request , 'index.html' , context)
