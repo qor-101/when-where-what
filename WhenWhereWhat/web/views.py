@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from datetime import date
 from django.contrib.auth.hashers import make_password
 import secrets
-
+from django.contrib.auth import logout
 import sqlite3
 import requests
 from django.shortcuts import render
@@ -149,7 +149,12 @@ def search_news(request):
     }
     return render(request , 'index.html' , context)
 
-    
+@login_required
+def logout_view(request):
+    logout(request)
+    messages.success(request , "Successfully logged out!")
+
+    return redirect('index')
 
 # def register(request):
 

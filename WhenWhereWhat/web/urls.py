@@ -9,7 +9,8 @@ urlpatterns = [
     path("" , top_news , name = "index"),
     path("search/" , search_news , name = "search"),
     path('login/' , login , name = 'login'),
-    path('loggedin/' , logged_in_news , name = "logged_in" )
+    path('loggedin/' , logged_in_news , name = "logged_in" ),
+    path('logout/' , logout_view , name = 'logout')
     # path('login',login_user),
     # path('signup',signup_user),
 ]
