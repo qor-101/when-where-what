@@ -33,7 +33,7 @@ def toi(request):
         'zero' : articles[0],
         'news' : articles[1:],
     }
-    return render(request , 'index.html' , context)
+    return render(request , 'index2.html' , context)
 
 def indiatoday(request):
     articles = returns_a_list_of_news_articles_given_a_rss_link('https://www.indiatoday.in/rss/1206584')
@@ -41,7 +41,7 @@ def indiatoday(request):
         'zero' : articles[0],
         'news' : articles[1:],
     }
-    return render(request , 'index.html' , context)
+    return render(request , 'index2.html' , context)
 
 def etimes(request):
     articles = returns_a_list_of_news_articles_given_a_rss_link('https://economictimes.indiatimes.com/rssfeedstopstories.cms')
@@ -49,4 +49,4 @@ def etimes(request):
         'zero' : articles[0],
         'news' : articles[1:],
     }
-    return render(request , 'index.html' , context)
+    return render(request , 'index2.html' , context)
